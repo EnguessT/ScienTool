@@ -1,8 +1,12 @@
 {
     "cmake.configureOnOpen": true,
-    "cmake.generator": "Ninja",
     "cmake.buildDirectory": "build",
+    "cmake.generator": "Ninja",
     "cmake.configureSettings": {
         "CMAKE_PREFIX_PATH": "/opt/Qt/6.7.3/gcc_64"
-    }
+    },
+    "files.associations": {
+        "*.qml": "qml"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
