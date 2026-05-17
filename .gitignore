@@ -65,6 +65,7 @@ ui_*.h
 # VSCode
 .vscode/
 *.code-workspace
+*json
 
 # CLion / JetBrains
 .idea/
