@@ -30,6 +30,8 @@ target_link_libraries(scientool
         scientool_sim3d
         scientool_ui
         scientool_repl
-        hobbes
+        scientool_repl_hobbes
+        scientool_repl_python
+        scientool_repl_lua
 )
 

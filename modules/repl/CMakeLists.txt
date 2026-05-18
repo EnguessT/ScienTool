@@ -1,6 +1,8 @@
 set (LIB_NAME scientool_repl)
 add_library(${LIB_NAME}
    src/ReplEngine.cpp
+   include/scientool/repl/ReplEngine.hpp
+   include/scientool/repl/IReplBackend.hpp
    
 )
 
