@@ -1,6 +1,6 @@
 set(LIB_NAME scientool_repl_hobbes)
 
-add_library(scientool_repl_hobbes
+add_library(${LIB_NAME}
     HobbesBackend.cpp
     HobbesBackend.hpp
 )
@@ -18,6 +18,13 @@ target_link_libraries(${LIB_NAME}
         scientool_math
         scientool_plotting   
 )
+
+set_target_properties(${LIB_NAME} PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}
+)
+
 
 enable_project_warnings(${LIB_NAME})
 
