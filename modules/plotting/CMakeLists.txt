@@ -19,3 +19,5 @@ target_link_libraries(${LIB_NAME}
         Qt6::Widgets
      
 )
+
+enable_project_warnings(scientool_plotting)

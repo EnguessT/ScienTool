@@ -24,3 +24,4 @@ target_link_libraries(${LIB_NAME}
           
 )
 
+enable_project_warnings(scientool_ode)

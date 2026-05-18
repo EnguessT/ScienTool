@@ -18,6 +18,9 @@ target_include_directories(scientool
 
 target_link_libraries(scientool
     PRIVATE
+    	Qt6::Widgets
+        Qt6::Gui
+        Qt6::Core
         scientool_core
         scientool_math
         scientool_ode
@@ -27,8 +30,6 @@ target_link_libraries(scientool
         scientool_sim3d
         scientool_ui
         scientool_repl
-        Qt6::Widgets
-        Qt6::Gui
-        Qt6::Core
+        hobbes
 )
 

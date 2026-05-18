@@ -14,6 +14,7 @@ target_link_libraries(${LIB_NAME}
         hobbes
         scientool_core
         scientool_math
-        scientool_plotting 
-     
+        scientool_plotting   
 )
+
+enable_project_warnings(scientool_repl)

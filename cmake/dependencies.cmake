@@ -1,3 +1,10 @@
+
+add_compile_options(
+    -Wno-error=unused-but-set-variable
+    -Wno-error=uninitialized
+    -Wno-error=maybe-uninitialized
+)
+
 # ---------------------------------------------------------
 # Qt6
 # ---------------------------------------------------------
@@ -62,12 +69,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(box2d)
 
-add_compile_options(
-    -Wno-error=unused-but-set-variable
-    -Wno-error=uninitialized
-    -Wno-error=maybe-uninitialized
-)
-
 # ---------------------------------------------------------
 # Matplot++
 # ---------------------------------------------------------
@@ -81,23 +82,3 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/alandefreitas/matplotplusplus.git
 )
 FetchContent_MakeAvailable(matplot)
-
-# ---------------------------------------------------------
-# Hobbes
-# ---------------------------------------------------------
-# Disable unnecessary stuff
-set(HOBBES_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(HOBBES_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(HOBBES_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
-set(HOBBES_ENABLE_PYTHON OFF CACHE BOOL "" FORCE)
-set(HOBBES_ENABLE_DOCS OFF CACHE BOOL "" FORCE)
-
-# Keep the JIT backend ON (required for REPL)
-set(HOBBES_ENABLE_LLVM_JIT ON CACHE BOOL "" FORCE)
-set(HOBBES_ENABLE_LLVM_BACKEND ON CACHE BOOL "" FORCE)
-FetchContent_Declare(
-    hobbes
-    GIT_REPOSITORY https://github.com/morganstanley/hobbes.git
-    GIT_TAG main
-)
-FetchContent_MakeAvailable(hobbes)

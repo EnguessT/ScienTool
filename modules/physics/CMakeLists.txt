@@ -20,3 +20,5 @@ target_link_libraries(${LIB_NAME}
         GSL::gslcblas  
 )
 
+enable_project_warnings(scientool_physics)
+

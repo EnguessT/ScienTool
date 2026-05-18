@@ -16,4 +16,4 @@ target_link_libraries(${LIB_NAME}
         Eigen3::Eigen
 )
 
-
+enable_project_warnings(scientool_math)

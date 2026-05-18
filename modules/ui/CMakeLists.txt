@@ -17,3 +17,5 @@ target_link_libraries(${LIB_NAME}
     	Qt6::QuickControls2 
      
 )
+
+enable_project_warnings(scientool_ui)
