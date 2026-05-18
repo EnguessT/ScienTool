@@ -1,5 +1,4 @@
-#include "ReplEngine.hpp"
-#include <hobbes/hobbes.h>
+#include <scientool/repl/ReplEngine.hpp>
 
 namespace scientool::repl {
 	struct ReplEngine::Impl {
