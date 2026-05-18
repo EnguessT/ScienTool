@@ -27,16 +27,6 @@ add_subdirectory(modules/ui)
 add_subdirectory(modules/repl)
 
 # ---------------------------------------------------------
-# Hobbes
-# ---------------------------------------------------------
-add_library(hobbes STATIC IMPORTED)
-
-set_target_properties(hobbes PROPERTIES
-    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/external/hobbes/lib/libhobbes.a"
-    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/external/hobbes/include"
-)
-
-# ---------------------------------------------------------
 # Add applications
 # ---------------------------------------------------------
 add_subdirectory(apps/scientool)

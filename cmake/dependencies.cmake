@@ -82,3 +82,20 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/alandefreitas/matplotplusplus.git
 )
 FetchContent_MakeAvailable(matplot)
+
+# ---------------------------------------------------------
+# Hobbes
+# ---------------------------------------------------------
+add_library(hobbes STATIC IMPORTED)
+
+set_target_properties(hobbes PROPERTIES
+    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/external/hobbes/lib/libhobbes.a"
+    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/external/hobbes/include"
+)
+
+
+# ---------------------------------------------------------
+# Python and Lua 
+# ---------------------------------------------------------
+find_package(Python3 COMPONENTS Development REQUIRED)
+find_package(Lua REQUIRED)
