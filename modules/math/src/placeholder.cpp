@@ -1,0 +1,1 @@
+namespace scientool::math {}

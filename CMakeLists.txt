@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 project(Scientool VERSION 1.0.0 LANGUAGES CXX)
 
+# Disable Werror for external deps
+add_compile_options(-Wno-error -Wno-error=unused-but-set-variable)
+
 # ---------------------------------------------------------
 # Load reusable CMake logic
 # ---------------------------------------------------------

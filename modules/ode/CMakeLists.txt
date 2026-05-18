@@ -1,9 +1,10 @@
 set (LIB_NAME scientool_ode)
 add_library(${LIB_NAME}
-    src/ODEIntegrator.cpp
-    src/RungeKutta.cpp
-    src/GslWrapper.cpp
-    src/OdeintWrapper.cpp
+    src/placeholder.cpp
+    #src/ODEIntegrator.cpp
+    #src/RungeKutta.cpp
+    #src/GslWrapper.cpp
+    #src/OdeintWrapper.cpp
 )
 
 target_include_directories(${LIB_NAME}

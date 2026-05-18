@@ -1,9 +1,6 @@
 set (LIB_NAME scientool_math)
 add_library(${LIB_NAME}
-    src/Vector.cpp
-    src/Matrix.cpp
-    src/Interpolation.cpp
-    src/Random.cpp
+    src/placeholder.cpp
 )
 
 target_include_directories(${LIB_NAME}

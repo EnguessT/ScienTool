@@ -1,6 +1,6 @@
 set (LIB_NAME scientool_sim2d)
 add_library(${LIB_NAME}
-   
+   src/placeholder.cpp
 )
 
 target_include_directories(${LIB_NAME}

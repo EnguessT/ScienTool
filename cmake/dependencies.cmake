@@ -7,6 +7,12 @@ find_package(Qt6 REQUIRED COMPONENTS
     Widgets 
     Quick 
     QuickControls2
+    OpenGLWidgets
+    Quick3D
+    Quick3DAssetImport
+    Quick3DAssetUtils
+    Quick3DPhysics
+    Quick3DParticles
 )
 
 # ---------------------------------------------------------
@@ -56,6 +62,11 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(box2d)
 
+add_compile_options(
+    -Wno-error=unused-but-set-variable
+    -Wno-error=uninitialized
+    -Wno-error=maybe-uninitialized
+)
 
 # ---------------------------------------------------------
 # Matplot++
@@ -66,9 +77,9 @@ set(MATPLOT_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(MATPLOT_BUILD_BENCHMARKS OFF CACHE BOOL "" FORCE)
 
 FetchContent_Declare(
-    matplot++
+    matplot
     GIT_REPOSITORY https://github.com/alandefreitas/matplotplusplus.git
 )
-FetchContent_MakeAvailable(matplot++)
+FetchContent_MakeAvailable(matplot)
 
 
