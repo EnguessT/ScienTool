@@ -82,4 +82,21 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(matplot)
 
+# ---------------------------------------------------------
+# Hobbes
+# ---------------------------------------------------------
+# Disable unnecessary stuff
+set(HOBBES_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(HOBBES_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(HOBBES_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
+set(HOBBES_ENABLE_PYTHON OFF CACHE BOOL "" FORCE)
+set(HOBBES_ENABLE_DOCS OFF CACHE BOOL "" FORCE)
 
+# Keep the JIT backend ON (required for REPL)
+set(HOBBES_ENABLE_LLVM_JIT ON CACHE BOOL "" FORCE)
+set(HOBBES_ENABLE_LLVM_BACKEND ON CACHE BOOL "" FORCE)
+FetchContent_Declare(
+    hobbes
+    GIT_REPOSITORY https://github.com/morganstanley/hobbes.git
+)
+FetchContent_MakeAvailable(hobbes)

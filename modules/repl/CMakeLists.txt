@@ -1,6 +1,7 @@
 set (LIB_NAME scientool_repl)
 add_library(${LIB_NAME}
-   src/placeholder.cpp
+   src/ReplEngine.cpp
+   
 )
 
 target_include_directories(${LIB_NAME}
@@ -10,6 +11,9 @@ target_include_directories(${LIB_NAME}
 
 target_link_libraries(${LIB_NAME}
     PRIVATE
-        
+        hobbes
+        scientool_core
+        scientool_math
+        scientool_plotting 
      
 )
