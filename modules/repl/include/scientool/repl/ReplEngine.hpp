@@ -1,21 +1,23 @@
 #pragma once
 
-#include <string>
-#include <functional>
+#include <memory>
+#include <utility>
+#include <scientool/repl/IReplBackend.hpp>
 
 namespace scientool::repl {
 
 	class ReplEngine {
 	public:
-		using OutputCallback = std::function<void(const std::string&)>;
+		void setBackend(std::unique_ptr<IReplBackend> b) {
+		    backend = std::move(b);
+		}
 
-		explicit ReplEngine(OutputCallback out);
-		~ReplEngine();
-
-		void evalLine(const std::string& code);
+		std::string evaluate(const std::string& code) {
+		    return backend->evaluate(code);
+		}
 
 	private:
-		struct Impl;
-		Impl* impl_;
+		std::unique_ptr<IReplBackend> backend;
 	};
+
 }
