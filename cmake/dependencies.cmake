@@ -98,5 +98,6 @@ set(HOBBES_ENABLE_LLVM_BACKEND ON CACHE BOOL "" FORCE)
 FetchContent_Declare(
     hobbes
     GIT_REPOSITORY https://github.com/morganstanley/hobbes.git
+    GIT_TAG main
 )
 FetchContent_MakeAvailable(hobbes)

@@ -1,9 +1,19 @@
 # ---------------------------------------------------------
-# Compiler warnings
+# Project-only compiler warnings
 # ---------------------------------------------------------
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(-Wall -Wextra -Wpedantic )
-elseif(MSVC)
-    add_compile_options(/W4 /permissive- /EHsc)
-endif()
+
+function(enable_project_warnings TARGET)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        target_compile_options(${TARGET} PRIVATE
+            -Wall
+            -Wextra
+            -Wpedantic
+        )
+    elseif(MSVC)
+        target_compile_options(${TARGET} PRIVATE
+            /W4 /permissive- /EHsc
+        )
+    endif()
+endfunction()
+
 
