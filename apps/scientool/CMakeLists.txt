@@ -12,6 +12,7 @@ add_executable(scientool
 target_include_directories(scientool
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+	${CMAKE_SOURCE_DIR}/external/hobbes/include
 )
 
 

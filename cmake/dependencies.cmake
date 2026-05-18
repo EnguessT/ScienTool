@@ -98,4 +98,4 @@ set_target_properties(hobbes PROPERTIES
 # Python and Lua 
 # ---------------------------------------------------------
 find_package(Python3 COMPONENTS Development REQUIRED)
-find_package(Lua REQUIRED)
+#find_package(Lua 5.3 REQUIRED)
