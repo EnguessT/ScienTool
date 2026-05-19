@@ -1,27 +1,43 @@
+set(EXEC_NAME Scientool)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+qt_standard_project_setup(REQUIRES 6.5)
 
-add_executable(scientool
+add_executable(${EXEC_NAME}
     main.cpp
-    src/MainWindow.cpp
-    include/MainWindow.hpp
 )
 
-target_include_directories(scientool
+target_include_directories(${EXEC_NAME}
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-	${CMAKE_SOURCE_DIR}/external/hobbes/include
+		${CMAKE_CURRENT_SOURCE_DIR}/include
+		${CMAKE_SOURCE_DIR}/external/hobbes/include
 )
 
 
 
-target_link_libraries(scientool
+qt_add_qml_module(${EXEC_NAME}
+		URI Scientool
+		VERSION 1.0
+		RESOURCE_PREFIX "/"
+		QML_FILES
+			qml/Main.qml
+			qml/components/mainwindow/HeaderBar.qml
+
+)
+
+# ---------------------------------------------------------
+# QML Module
+# ---------------------------------------------------------
+target_link_libraries(${EXEC_NAME}
     PRIVATE
-    	Qt6::Widgets
+		Qt6::Core
         Qt6::Gui
-        Qt6::Core
+        Qt6::Qml
+		Qt6::Quick
+		Qt6::QuickControls2
+
         scientool_core
         scientool_math
         scientool_ode
