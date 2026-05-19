@@ -1,10 +1,4 @@
 
-add_compile_options(
-    -Wno-error=unused-but-set-variable
-    -Wno-error=uninitialized
-    -Wno-error=maybe-uninitialized
-)
-
 # ---------------------------------------------------------
 # Qt6
 # ---------------------------------------------------------
@@ -95,7 +89,23 @@ set_target_properties(hobbes PROPERTIES
 
 
 # ---------------------------------------------------------
-# Python and Lua 
+# Python
 # ---------------------------------------------------------
-find_package(Python3 COMPONENTS Development REQUIRED)
-#find_package(Lua 5.3 REQUIRED)
+add_library(Python3_Embed SHARED IMPORTED)
+
+set_target_properties(Python3_Embed PROPERTIES
+   IMPORTED_LOCATION_RELEASE "${CMAKE_SOURCE_DIR}/external/python/lib/libpython3.8.so"
+   IMPORTED_LOCATION_DEBUG   "${CMAKE_SOURCE_DIR}/external/python/lib/libpython3.8.so"
+   INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/external/python/include/python3.8"
+
+)
+
+# ---------------------------------------------------------
+# Lua
+# ---------------------------------------------------------
+add_library(lua SHARED IMPORTED)
+
+set_target_properties(lua PROPERTIES
+    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/external/lua/lib/liblua5.3.so"
+    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/external/lua/include/lua5.3"
+)
