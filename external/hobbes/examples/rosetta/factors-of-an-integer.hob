@@ -1,3 +1,0 @@
-// @test: [factors(n) | n <- [1..12]]
-factors :: int -> [int]
-factors n = [d | d <- [1..n], n % d == 0]

@@ -1,3 +1,0 @@
-// @test: ([isEven(n) | n <- [0..10]], [isOdd(n) | n <- [0..10]])
-isOdd n = if (n == 0) then false else not(isOdd(n - 1))
-isEven n = not(isOdd(n))

@@ -78,17 +78,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(matplot)
 
 # ---------------------------------------------------------
-# Hobbes
-# ---------------------------------------------------------
-add_library(hobbes STATIC IMPORTED)
-
-set_target_properties(hobbes PROPERTIES
-    IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/external/hobbes/lib/libhobbes.a"
-    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/external/hobbes/include"
-)
-
-
-# ---------------------------------------------------------
 # Python
 # ---------------------------------------------------------
 add_library(Python3_Embed SHARED IMPORTED)

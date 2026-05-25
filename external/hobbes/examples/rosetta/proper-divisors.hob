@@ -1,3 +1,0 @@
-// @test: [properDivisors(n) | n <- [1..10]]
-properDivisors :: int -> [int]
-properDivisors n = [d | d <- [1..n-1], n % d == 0]

@@ -1,3 +1,0 @@
-// @test: [isPalindrome("racecar"), isPalindrome("hello"), isPalindrome("madam"), isPalindrome("")]
-isPalindrome :: [char] -> bool
-isPalindrome s = s == reverse(s)

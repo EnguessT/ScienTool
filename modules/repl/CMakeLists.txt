@@ -11,7 +11,6 @@ target_include_directories(${LIB_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-add_subdirectory(backends/hobbes)
 add_subdirectory(backends/python)
 add_subdirectory(backends/lua)
 

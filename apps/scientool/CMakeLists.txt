@@ -47,7 +47,6 @@ target_link_libraries(${EXEC_NAME}
         scientool_sim3d
         scientool_ui
         scientool_repl
-        scientool_repl_hobbes
         scientool_repl_python
         scientool_repl_lua
 )
